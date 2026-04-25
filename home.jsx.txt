@@ -1,0 +1,18 @@
+import Navbar from "../components/Navbar";
+import BuyCard from "../components/BuyCard";
+import SellCard from "../components/SellCard";
+
+function Home() {
+  return (
+    <div>
+      <Navbar />
+      <div className="container">
+        <h1>Welcome to MammonePay</h1>
+        <BuyCard />
+        <SellCard />
+      </div>
+    </div>
+  );
+}
+
+export default Home;

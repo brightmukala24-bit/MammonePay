@@ -1,0 +1,12 @@
+function SellCard() {
+  return (
+    <div className="card">
+      <h3>Sell USDT</h3>
+      <p>Rate: 1 USDT = 3,900 MWK</p>
+      <input placeholder="Enter USDT amount" />
+      <button className="sell-btn">Sell Now</button>
+    </div>
+  );
+}
+
+export default SellCard;

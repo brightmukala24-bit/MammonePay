@@ -1,0 +1,12 @@
+function BuyCard() {
+  return (
+    <div className="card">
+      <h3>Buy USDT</h3>
+      <p>Rate: 1 USDT = 4,100 MWK</p>
+      <input placeholder="Enter MWK amount" />
+      <button className="buy-btn">Buy Now</button>
+    </div>
+  );
+}
+
+export default BuyCard;
