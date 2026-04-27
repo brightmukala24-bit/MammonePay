@@ -1,12 +1,18 @@
 function SellCard() {
   return (
-    <div className="card">
-      <h3>Sell USDT</h3>
-      <p>Rate: 1 USDT = 3,900 MWK</p>
-      <input placeholder="Enter USDT amount" />
+    <section className="card" aria-label="Sell USDT">
+      <div className="card-header">
+        <h3>Sell USDT</h3>
+        <span className="pill info">Instant Payout</span>
+      </div>
+      <p className="rate">Rate: 1 USDT = <strong>3,900 MWK</strong></p>
+      <label htmlFor="sellAmount">Amount in USDT</label>
+      <input id="sellAmount" placeholder="e.g. 250" />
       <button className="sell-btn">Sell Now</button>
-    </div>
+    </section>
   );
 }
 
 export default SellCard;
+home.jsx.txt
+home.jsx.txt
