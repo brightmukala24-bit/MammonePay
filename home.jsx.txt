@@ -4,13 +4,23 @@ import SellCard from "../components/SellCard";
 
 function Home() {
   return (
-    <div>
+    <div className="page">
       <Navbar />
-      <div className="container">
-        <h1>Welcome to MammonePay</h1>
-        <BuyCard />
-        <SellCard />
-      </div>
+
+      <main className="container">
+        <section className="hero">
+          <h1>Trade USDT in Minutes.</h1>
+          <p>
+            MammonePay helps you buy and sell USDT quickly with transparent rates,
+            secure settlement, and a clean experience on any device.
+          </p>
+        </section>
+
+        <section className="cards-grid">
+          <BuyCard />
+          <SellCard />
+        </section>
+      </main>
     </div>
   );
 }
