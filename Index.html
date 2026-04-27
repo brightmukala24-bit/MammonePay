@@ -1,0 +1,270 @@
+ (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
+diff --git a/index.html b/index.html
+new file mode 100644
+index 0000000000000000000000000000000000000000..2da3e77f640e001785bf4602137e1a7d1c96924a
+--- /dev/null
++++ b/index.html
+@@ -0,0 +1,260 @@
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="UTF-8" />
++    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
++    <title>MammonePay | Buy & Sell USDT</title>
++    <meta
++      name="description"
++      content="MammonePay helps users buy and sell USDT fast and securely."
++    />
++    <style>
++      :root {
++        --bg: #050a1c;
++        --card: #111a38;
++        --line: #2b3b73;
++        --text: #e9eeff;
++        --muted: #a7b3d9;
++        --buy: #22c55e;
++        --sell: #38bdf8;
++      }
++
++      * {
++        box-sizing: border-box;
++      }
++
++      body {
++        margin: 0;
++        font-family: Inter, Segoe UI, Arial, sans-serif;
++        color: var(--text);
++        background: radial-gradient(circle at top left, #192959 0%, var(--bg) 42%);
++      }
++
++      .wrapper {
++        width: min(1080px, 92%);
++        margin: 20px auto 32px;
++      }
++
++      .header {
++        background: rgba(8, 13, 33, 0.82);
++        border: 1px solid var(--line);
++        border-radius: 16px;
++        padding: 14px 18px;
++        display: flex;
++        align-items: center;
++        justify-content: space-between;
++        gap: 12px;
++      }
++
++      .brand {
++        display: flex;
++        align-items: center;
++        gap: 12px;
++      }
++
++      .logo {
++        width: 54px;
++        height: 54px;
++      }
++
++      .brand h1 {
++        margin: 0;
++        font-size: 1.32rem;
++      }
++
++      .brand p {
++        margin: 3px 0 0;
++        color: var(--muted);
++        font-size: 0.85rem;
++      }
++
++      .hero {
++        margin-top: 22px;
++      }
++
++      .hero h2 {
++        margin: 0;
++        font-size: clamp(1.8rem, 5vw, 2.7rem);
++      }
++
++      .hero p {
++        color: var(--muted);
++        line-height: 1.65;
++        max-width: 760px;
++      }
++
++      .grid {
++        margin-top: 16px;
++        display: grid;
++        gap: 16px;
++        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
++      }
++
++      .card {
++        border: 1px solid var(--line);
++        border-radius: 14px;
++        background: linear-gradient(170deg, #131f47 0%, #0b1431 100%);
++        padding: 18px;
++      }
++
++      .card h3 {
++        margin: 0;
++      }
++
++      .rate {
++        margin: 10px 0;
++        color: var(--muted);
++      }
++
++      label {
++        display: block;
++        margin-bottom: 6px;
++        font-size: 0.9rem;
++      }
++
++      input,
++      button {
++        width: 100%;
++        border-radius: 9px;
++        border: 1px solid transparent;
++        padding: 11px 12px;
++        font-size: 0.95rem;
++      }
++
++      input {
++        color: var(--text);
++        background: #090f27;
++        border-color: #324174;
++      }
++
++      button {
++        margin-top: 10px;
++        color: #fff;
++        font-weight: 700;
++        cursor: pointer;
++      }
++
++      .buy-btn { background: linear-gradient(135deg, #22c55e, #16a34a); }
++      .sell-btn { background: linear-gradient(135deg, #38bdf8, #0ea5e9); }
++
++      .subscribe {
++        margin-top: 28px;
++        border: 1px solid var(--line);
++        border-radius: 14px;
++        background: rgba(17, 26, 56, 0.85);
++        padding: 18px;
++      }
++
++      .subscribe h4 {
++        margin: 0;
++        font-size: 1.1rem;
++      }
++
++      .subscribe p {
++        margin: 8px 0 12px;
++        color: var(--muted);
++      }
++
++      .subscribe-form {
++        display: grid;
++        grid-template-columns: 1fr auto;
++        gap: 10px;
++      }
++
++      .subscribe-form button {
++        width: auto;
++        min-width: 130px;
++        margin-top: 0;
++        background: linear-gradient(135deg, #7c3aed, #0ea5e9);
++      }
++
++      footer {
++        margin-top: 16px;
++        color: var(--muted);
++        font-size: 0.88rem;
++      }
++
++      @media (max-width: 640px) {
++        .header {
++          flex-direction: column;
++          align-items: flex-start;
++        }
++
++        .subscribe-form {
++          grid-template-columns: 1fr;
++        }
++
++        .subscribe-form button {
++          width: 100%;
++        }
++      }
++    </style>
++  </head>
++  <body>
++    <div class="wrapper">
++      <header class="header">
++        <div class="brand">
++          <svg class="logo" viewBox="0 0 120 120" aria-hidden="true">
++            <defs>
++              <linearGradient id="brandGradient" x1="0" y1="0" x2="1" y2="1">
++                <stop offset="0%" stop-color="#a855f7" />
++                <stop offset="100%" stop-color="#0ea5e9" />
++              </linearGradient>
++            </defs>
++            <path d="M18 95V28a8 8 0 0 1 12-6l30 22 30-22a8 8 0 0 1 12 6v67a8 8 0 1 1-16 0V43L66 58a10 10 0 0 1-12 0L34 43v52a8 8 0 1 1-16 0Z" fill="url(#brandGradient)" />
++            <circle cx="60" cy="82" r="18" fill="#14b8a6" />
++            <path d="M60 70v24M52 76h16" stroke="#fff" stroke-width="4" stroke-linecap="round" />
++          </svg>
++          <div>
++            <h1>MammonePay</h1>
++            <p>Buy USDT • Sell USDT • Fast &amp; Secure</p>
++          </div>
++        </div>
++      </header>
++
++      <section class="hero">
++        <h2>Clear, fast, and secure crypto exchange preview.</h2>
++        <p>
++          This preview page shows exactly how users will experience MammonePay:
++          a simple flow for buying and selling USDT with visible rates and a
++          straightforward action path.
++        </p>
++      </section>
++
++      <section class="grid" aria-label="Trade actions">
++        <article class="card">
++          <h3>Buy USDT</h3>
++          <p class="rate">Rate: <strong>1 USDT = 4,100 MWK</strong></p>
++          <label for="buyMwk">Enter amount in MWK</label>
++          <input id="buyMwk" type="number" placeholder="Example: 100000" />
++          <button class="buy-btn" type="button">Buy Now</button>
++        </article>
++
++        <article class="card">
++          <h3>Sell USDT</h3>
++          <p class="rate">Rate: <strong>1 USDT = 3,900 MWK</strong></p>
++          <label for="sellUsdt">Enter amount in USDT</label>
++          <input id="sellUsdt" type="number" placeholder="Example: 250" />
++          <button class="sell-btn" type="button">Sell Now</button>
++        </article>
++      </section>
++
++      <section class="subscribe" aria-label="Newsletter subscription">
++        <h4>Stay updated with MammonePay</h4>
++        <p>Enter your email below to subscribe for updates, offers, and rate alerts.</p>
++        <form class="subscribe-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
++          <input
++            type="email"
++            name="email"
++            placeholder="Enter your email address"
++            aria-label="Email address"
++            required
++          />
++          <button type="submit">Subscribe</button>
++        </form>
++      </section>
++
++      <footer>© 2026 MammonePay. All rights reserved.</footer>
++    </div>
++  </body>
++</html>
+ 
+EOF
+)
