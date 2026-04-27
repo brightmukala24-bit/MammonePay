@@ -1,11 +1,15 @@
 function BuyCard() {
   return (
-    <div className="card">
-      <h3>Buy USDT</h3>
-      <p>Rate: 1 USDT = 4,100 MWK</p>
-      <input placeholder="Enter MWK amount" />
+    <section className="card" aria-label="Buy USDT">
+      <div className="card-header">
+        <h3>Buy USDT</h3>
+        <span className="pill success">Best Rate</span>
+      </div>
+      <p className="rate">Rate: 1 USDT = <strong>4,100 MWK</strong></p>
+      <label htmlFor="buyAmount">Amount in MWK</label>
+      <input id="buyAmount" placeholder="e.g. 100,000" />
       <button className="buy-btn">Buy Now</button>
-    </div>
+    </section>
   );
 }
 
